@@ -1,12 +1,28 @@
-<%- include('partials/header.ejs') %> 
-  <h1>Início</h1>
-  <p> <%= homeStartingContent %>  </p>
-  <% posts.forEach(element => { %>
-    <h1> <%= element.title %>  </h1>
-    <p> <%= element.content.substring(0, 100) + '...' %>
-      <a href="/posts/<%= element._id %>" >Leia mais</a> 
-    </p>
-  <% }) %> 
-<%- include('partials/footer.ejs') %> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <title>Jornal Diário</title>
+</head>
+<body>
+
+    <%- include('partials/header.ejs') %> 
+    <div class="container">
+      <h1>Início</h1>
+      <p> <%= homeStartingContent %>  </p>
+      <% posts.forEach(element => { %>
+        <h1> <%= element.title %>  </h1>
+        <p> <%= element.content.substring(0, 100) + '...' %>
+          <a href="/posts/<%= element._id %>" >Leia mais</a> 
+        </p>
+      <% }) %> 
+    </div>
+    <%- include('partials/footer.ejs') %>
+</body>
+</html> 
 
 
