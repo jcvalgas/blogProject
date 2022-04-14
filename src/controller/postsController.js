@@ -33,7 +33,7 @@ export const getPost = (req, res) => {
     Post.findOne({_id: requestedPostId}, function(err, post){
       res.render("post.ejs", {
         title: post.title,
-        content: post.body
+        content: post.content
       });
     });
 
