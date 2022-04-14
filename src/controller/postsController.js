@@ -50,6 +50,8 @@ export const postCompose = (req, res) => {
     content: req.body.postBody
   });
 
-  res.redirect('/')
+  post.save((err) => {
+    res.redirect('/')
+  })
   
 }
